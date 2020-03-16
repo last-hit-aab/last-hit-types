@@ -51,6 +51,8 @@ declare module 'last-hit-types' {
 		csspath?: string;
 		/** custom path */
 		custompath?: string;
+		/** data attribute path */
+		datapath?:string;
 		/** screenshot, base64 */
 		image?: string;
 		/** breakpoint */
@@ -101,9 +103,16 @@ declare module 'last-hit-types' {
 		url: string;
 		/** for install uuid of popup, manually input */
 		forStepUuid: string;
+		/** for match url, it's a regexp */
+		matcher?: string;
 	};
 	export type PageErrorStep = Step & { type: 'page-error'; url: string };
-	export type PageSwitchStep = Step & { type: 'page-switched'; url: string };
+	export type PageSwitchStep = Step & { 
+		type: 'page-switched'; 
+		url: string; 
+		/** for match url, it's a regexp */
+		matcher?: string; 
+	};
 	export type DialogOpenStep = Step & {
 		type: 'dialog-open';
 		url: string;
@@ -187,6 +196,8 @@ declare module 'last-hit-types' {
 		sleepAfterChange?: number;
 		/** threshold of slow ajax, in millisecond */
 		slowAjaxTime?: number;
+		/** data attribute name for data path */
+		dataAttrName?: string;
 	};
 
 	export namespace Extensions {
