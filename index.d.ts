@@ -196,8 +196,6 @@ declare module 'last-hit-types' {
 		sleepAfterChange?: number;
 		/** threshold of slow ajax, in millisecond */
 		slowAjaxTime?: number;
-		/** data attribute name for data path */
-		dataAttrName?: string;
 	};
 
 	export namespace Extensions {
